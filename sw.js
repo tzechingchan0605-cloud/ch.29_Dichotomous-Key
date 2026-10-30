@@ -1,4 +1,4 @@
-const CACHE='keylab-v3';
+const CACHE='keylab-v4';
 const ASSETS=['./','./index.html','./style.css','./app.js','./engine.js','./photo-data.js','./assets/金裳鳳蝶.jpeg','./assets/羅非魚.jpeg','./manifest.webmanifest'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)));self.skipWaiting();});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()));});

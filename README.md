@@ -11,7 +11,7 @@ cd ch.29_Dichotomous-Key
 python3 -m http.server 8000
 ```
 
-Open `http://localhost:8000`. `npm start` runs the same server. Do not open index.html directly: browser ES modules require HTTP. Run `npm test` for the 12 model acceptance tests.
+Open `http://localhost:8000`. `npm start` runs the same server. Do not open index.html directly: browser ES modules require HTTP. Run `npm test` for the 11 model acceptance tests.
 
 ## Offline / 離線
 
@@ -54,6 +54,6 @@ The default **Real photographs** reference set uses the two original JPEGs uploa
 
 Photographs supplied by the user; rights and credit remain with the original websites / rights holders. No open licence or photographer identity is invented. The six-member butterfly and fish schematic sets remain separate reference sets; the two photographs are not relabelled as six different specimens.
 
-`photo-data.js` is the canonical photo table: A has visible wings and antennae, without fins; B has visible fins, without wings or antennae. These observations were checked against the actual uploaded photographs, rather than inferred from species names. Only these two reference photographs can be identified by this key; species identity outside the reference set is not verified. Feature highlighting marks a visible region when the characteristic is present. Alternative first splits by wings, antennae or fins are accepted.
+`photo-data.js` defines the two **independent observation models**. Butterfly observations cover forewing stripes, hindwing patches and antennae. Fish observations cover a continuous dorsal fin, rounded tail fin and eye position. Each selectable observation highlights the corresponding region in the original photograph. Photos are not grouped into a fish-versus-butterfly identification task. The default view shows the butterfly photo model; use the model selector for the separate fish photo model. The six-specimen key-building, identification and comparison activities remain within their respective butterfly or fish schematic groups. More original specimen photographs would be required for within-group photographic identification challenges.
 
-Two additional Node checks verify the photo features, alternative routes, existing image files and source mappings. Chromium checks cover photo loading, both identification routes, language retention, source URLs, highlighting, photo-key construction, mobile layout and offline image reload.
+Eleven Node checks cover the key engine and independent photo/source mappings. Chromium verifies both independent models, feature highlights, language preservation, same-group practice, mobile layout and offline image loading.

@@ -1,7 +1,6 @@
-import {photos} from './photo-data.js';
 export const features=['tail','spot','stripe'];
-export const sets={photos:Object.values(photos).map(p=>features.map(f=>Number(p[f]))),butterfly:[[0,0,0],[0,0,1],[0,1,0],[1,0,0],[1,1,0],[1,1,1]],fish:[[0,0,0],[0,1,0],[0,1,1],[1,0,0],[1,0,1],[1,1,1]]};
-export function specimens(set){return sets[set].map((v,i)=>({id:'ABCDEF'[i],...(set==='photos'?photos['ABCDEF'[i]]:{}),...Object.fromEntries(features.map((f,j)=>[f,!!v[j]]))}));}
+export const sets={butterfly:[[0,0,0],[0,0,1],[0,1,0],[1,0,0],[1,1,0],[1,1,1]],fish:[[0,0,0],[0,1,0],[0,1,1],[1,0,0],[1,0,1],[1,1,1]]};
+export function specimens(set){return sets[set].map((v,i)=>({id:'ABCDEF'[i],...Object.fromEntries(features.map((f,j)=>[f,!!v[j]]))}));}
 export function leaf(ids){return {ids:[...ids], terminal:ids.length===1?ids[0]:null};}
 export function split(node,feature,table){const groups=[true,false].map(v=>node.ids.filter(id=>table.find(s=>s.id===id)[feature]===v));if(groups.some(g=>!g.length))throw Error('empty');return {ids:[...node.ids],feature,yes:leaf(groups[0]),no:leaf(groups[1])};}
 export function worked(table,order=features){function build(ids){if(ids.length===1)return leaf(ids);const f=order.find(f=>new Set(table.filter(s=>ids.includes(s.id)).map(s=>s[f])).size===2);const n=split(leaf(ids),f,table);n.yes=build(n.yes.ids);n.no=build(n.no.ids);return n;}return build(table.map(s=>s.id));}
