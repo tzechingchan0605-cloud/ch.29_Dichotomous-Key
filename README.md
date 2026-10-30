@@ -44,3 +44,10 @@ No textbook PDF was attached. The implementation follows the supplied section 29
 - Chromium: offline reload succeeds after service-worker activation; no uncaught page errors.
 
 Testing used a temporary external Playwright installation and system Chromium, not a runtime dependency. Free explanations are self-assessed against revealed guidance and never keyword-graded. Exported records include immutable specimen features, full key, route and terminal; changing settings does not alter earlier records. Key JSON exports preserve the original tree and generated paired statements; print includes both forms. Printing uses the browser's PDF/print facility.
+
+## User-supplied photograph references (pending acquisition)
+
+- Butterfly: http://www.kaohsiungfarm.com.tw/Font-Page/butterfly-dtl/butterfly06/
+- Fish: https://agroworld.my/cn/article-details/389-article-05
+
+The user supplied these source links alongside two photographs. Source-page access is currently blocked by the cloud network policy (HTTP 403). Photographer identity, image URLs, reuse terms and species identification have not been verified. The app links to both sources but does not misattribute its original schematic drawings to them. No third-party photographs have yet been bundled or substituted into the feature table. Network-domain additions are saved in the environment draft for application before acquisition can continue.
