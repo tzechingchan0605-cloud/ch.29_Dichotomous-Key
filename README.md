@@ -63,3 +63,9 @@ Choices and route controls appear above the tree. All tree views (photo keys, si
 The six-specimen key-building, identification and comparison activities remain within their respective butterfly or fish schematic groups. More original specimen photographs would be required for within-group photographic identification challenges.
 
 Fourteen Node checks cover the key engine, independent photo/source mappings, canonical butterfly traits, correct photo paths, first-error diagnosis and numbering. Chromium verifies choice placement above the diagram; parent nodes above their children; both photo routes; source URLs; language and list-view state; backtracking and replay; records; editor operation; mobile overflow; and offline photo loading.
+
+## Main answer layout and updates
+
+The main **Identify from real photos** tab is now the photo-answer workspace: original photograph on the left, paired choices on the right, and a connected top-down tree beneath the choices. On desktop the photo panel sticks within the answer section while scrolling; on narrow screens it stacks above the choices. The former synthetic identification activity is explicitly labelled **Schematic practice**. Both butterfly and fish photos are reachable from the main Identify tab.
+
+The service worker refreshes HTML, JavaScript and CSS from the network when connected, with cached fallbacks for offline use; photos remain locally cached. This prevents an old cached app or stylesheet from indefinitely preserving the earlier list-like diagram. Application updates never force a reload in the middle of a student's answer. Chromium validation included deliberately caching obsolete app/CSS responses and verifying a subsequent online reload restored the new photo-answer layout.

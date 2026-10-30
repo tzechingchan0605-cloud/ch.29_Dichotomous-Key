@@ -4,3 +4,12 @@
 
 /* Connected tree: parent above its two child branches. Scroll stays inside the diagram. */
 .grid>*{min-width:0}.tree-scroll{max-width:100%;overflow:auto;padding:12px 0 22px}.top-down{width:max-content;min-width:100%;text-align:center}.top-down ul{display:flex;justify-content:center;position:relative;list-style:none;border:0;margin:0;padding:32px 0 0}.top-down li{display:flex;flex:1;flex-direction:column;align-items:center;position:relative;margin:0;padding:70px 12px 0}.top-down li::before,.top-down li::after{content:'';position:absolute;top:0;right:50%;border-top:1px solid #66887f;width:50%;height:70px}.top-down li::after{right:auto;left:50%;border-left:1px solid #66887f}.top-down li:first-child::before,.top-down li:last-child::after{border:0}.top-down li:last-child::before{border-right:1px solid #66887f}.top-down li:only-child::before,.top-down li:only-child::after{display:none}.top-down ul ul::before{content:'';position:absolute;top:0;left:50%;height:32px;border-left:1px solid #66887f}.top-down .tree-root{padding:0}.top-down .tree-root>li{padding-top:0}.top-down .edge-label{position:absolute;top:15px;left:50%;transform:translateX(-50%);width:172px;max-height:52px;padding:3px;background:#fff;font-size:.8rem;line-height:1.4}.top-down .node{width:184px;min-height:64px;text-align:center;display:block;line-height:1.45;font-size:.9rem;white-space:normal;border-radius:3px}.top-down .decision-node{background:#dceff7}.top-down .terminal-node{background:#faf0cb}.top-down .node:disabled{opacity:1;cursor:default}.top-down .route-node{outline:3px solid #347c67;outline-offset:2px}.top-down .selected{outline:3px solid #bd7d18}.top-down .error{background:#fff1ec;border-color:#b13f35}@media print{.tree-scroll{overflow:visible}.top-down{zoom:.65}.top-down .node{display:block!important;color:#163e3d;print-color-adjust:exact}.edge-label{print-color-adjust:exact}}
+
+/* Keep the original photograph beside the current choices, never above a long tree. */
+.photo-answer-grid{grid-template-columns:minmax(300px,1fr) minmax(350px,1.15fr);align-items:start}
+.photo-panel{position:sticky;top:16px;align-self:start}
+.photo-panel .photo-frame{width:min(100%,560px);margin-inline:auto}
+.photo-panel .real-photo figcaption{background:#edf4ef}
+.answer-panel .choices{margin-top:20px}
+@media(max-width:800px){.photo-answer-grid{grid-template-columns:1fr}.photo-panel{position:static}.photo-panel .photo-frame{max-width:400px}}
+@media print{.photo-panel{position:static}.photo-answer-grid{display:block}}
