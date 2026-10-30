@@ -11,7 +11,7 @@ cd ch.29_Dichotomous-Key
 python3 -m http.server 8000
 ```
 
-Open `http://localhost:8000`. `npm start` runs the same server. Do not open index.html directly: browser ES modules require HTTP. Run `npm test` for the 11 model acceptance tests.
+Open `http://localhost:8000`. `npm start` runs the same server. Do not open index.html directly: browser ES modules require HTTP. Run `npm test` for the 14 model acceptance tests.
 
 ## Offline / 離線
 
@@ -54,6 +54,12 @@ The default **Real photographs** reference set uses the two original JPEGs uploa
 
 Photographs supplied by the user; rights and credit remain with the original websites / rights holders. No open licence or photographer identity is invented. The six-member butterfly and fish schematic sets remain separate reference sets; the two photographs are not relabelled as six different specimens.
 
-`photo-data.js` defines the two **independent observation models**. Butterfly observations cover forewing stripes, hindwing patches and antennae. Fish observations cover a continuous dorsal fin, rounded tail fin and eye position. Each selectable observation highlights the corresponding region in the original photograph. Photos are not grouped into a fish-versus-butterfly identification task. The default view shows the butterfly photo model; use the model selector for the separate fish photo model. The six-specimen key-building, identification and comparison activities remain within their respective butterfly or fish schematic groups. More original specimen photographs would be required for within-group photographic identification challenges.
+`photo-data.js` defines separate, interactive **photo observation keys**. Students inspect one real photograph and select paired statements before looking at the tree below. These are checks of visible features of the reference photograph, not complete species keys. The butterfly and fish are never combined into a cross-group identification task.
 
-Eleven Node checks cover the key engine and independent photo/source mappings. Chromium verifies both independent models, feature highlights, language preservation, same-group practice, mobile layout and offline image loading.
+The photographed butterfly has **no visible hindwing tail projection**, **no concentric wing eye-spots**, and **visible forewing stripes**. Dark patches are not automatically treated as eye-spots. The fish has **one continuous dorsal fin rather than two separate dorsal fins**, a **rounded rather than forked tail**, and **no distinct body eye-spot**. Answers, region highlights and generated tree/list representations derive from this canonical photo table.
+
+Choices and route controls appear above the tree. All tree views (photo keys, six-specimen keys, comparison and editor) now run **from top to bottom**, with connected branches, paired-statement labels, blue question boxes and yellow terminal boxes. Active routes have a visible outline. The diagram scrolls inside its own panel on small screens. Tree and numbered-list views share stable node paths. Backtracking, reset, step-by-step replay, bilingual switching and immutable route recording with CSV export are supported for photo decisions. Feedback identifies the first inconsistent observation; no unsupported species identity is invented.
+
+The six-specimen key-building, identification and comparison activities remain within their respective butterfly or fish schematic groups. More original specimen photographs would be required for within-group photographic identification challenges.
+
+Fourteen Node checks cover the key engine, independent photo/source mappings, canonical butterfly traits, correct photo paths, first-error diagnosis and numbering. Chromium verifies choice placement above the diagram; parent nodes above their children; both photo routes; source URLs; language and list-view state; backtracking and replay; records; editor operation; mobile overflow; and offline photo loading.
