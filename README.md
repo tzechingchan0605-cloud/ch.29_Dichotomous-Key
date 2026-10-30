@@ -11,7 +11,7 @@ cd ch.29_Dichotomous-Key
 python3 -m http.server 8000
 ```
 
-Open `http://localhost:8000`. `npm start` runs the same server. Do not open index.html directly: browser ES modules require HTTP. Run `npm test` for the 10 model acceptance tests.
+Open `http://localhost:8000`. `npm start` runs the same server. Do not open index.html directly: browser ES modules require HTTP. Run `npm test` for the 12 model acceptance tests.
 
 ## Offline / 離線
 
@@ -45,9 +45,15 @@ No textbook PDF was attached. The implementation follows the supplied section 29
 
 Testing used a temporary external Playwright installation and system Chromium, not a runtime dependency. Free explanations are self-assessed against revealed guidance and never keyword-graded. Exported records include immutable specimen features, full key, route and terminal; changing settings does not alter earlier records. Key JSON exports preserve the original tree and generated paired statements; print includes both forms. Printing uses the browser's PDF/print facility.
 
-## User-supplied photograph references (pending acquisition)
+## Real photographs and source citations
 
-- Butterfly: http://www.kaohsiungfarm.com.tw/Font-Page/butterfly-dtl/butterfly06/
-- Fish: https://agroworld.my/cn/article-details/389-article-05
+The default **Real photographs** reference set uses the two original JPEGs uploaded by the user to this repository. Both photographs are displayed locally and included in the service-worker cache and offline ZIP. Every display includes the corresponding source link supplied by the user:
 
-The user supplied these source links alongside two photographs. Source-page access is currently blocked by the cloud network policy (HTTP 403). Photographer identity, image URLs, reuse terms and species identification have not been verified. The app links to both sources but does not misattribute its original schematic drawings to them. No third-party photographs have yet been bundled or substituted into the feature table. Network-domain additions are saved in the environment draft for application before acquisition can continue.
+- `assets/金裳鳳蝶.jpeg`: http://www.kaohsiungfarm.com.tw/Font-Page/butterfly-dtl/butterfly06/
+- `assets/羅非魚.jpeg`: https://agroworld.my/cn/article-details/389-article-05
+
+Photographs supplied by the user; rights and credit remain with the original websites / rights holders. No open licence or photographer identity is invented. The six-member butterfly and fish schematic sets remain separate reference sets; the two photographs are not relabelled as six different specimens.
+
+`photo-data.js` is the canonical photo table: A has visible wings and antennae, without fins; B has visible fins, without wings or antennae. These observations were checked against the actual uploaded photographs, rather than inferred from species names. Only these two reference photographs can be identified by this key; species identity outside the reference set is not verified. Feature highlighting marks a visible region when the characteristic is present. Alternative first splits by wings, antennae or fins are accepted.
+
+Two additional Node checks verify the photo features, alternative routes, existing image files and source mappings. Chromium checks cover photo loading, both identification routes, language retention, source URLs, highlighting, photo-key construction, mobile layout and offline image reload.

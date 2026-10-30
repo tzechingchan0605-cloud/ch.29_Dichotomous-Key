@@ -24,7 +24,8 @@ jobs:
       - run: npm test
       - run: |
           mkdir public
-          cp index.html app.js engine.js style.css sw.js manifest.webmanifest README.md public/
+          cp index.html app.js engine.js photo-data.js style.css sw.js manifest.webmanifest README.md public/
+          cp -r assets public/
           cd public
           zip -r offline-lab.zip .
       - uses: actions/configure-pages@v5
